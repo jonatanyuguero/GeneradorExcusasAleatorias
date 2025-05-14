@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+
+<html lang="en"> 
+
+<head> 
+
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Generador Aleatorio de Excusas Divertidas</title> 
+
+</head> 
+
+<body> 
+
+    <p>Pulsa en el botón para generar de manera aleatoria una excusa</p> 
+
+    <button id="generarExcusaAleatoria">GeneraExcusaAleatoria</button> 
+
+    <p id="excusaGenerada"></p> 
+
+    <script> 
+
+        // Lista de excusas 
+        const sujetos = ["Mi perro", "Mi gato", "Mi hermano", "Un alien", "El vecino"]; 
+        const acciones = ["se comió", "destruyó", "escondió", "robó", "pintó"]; 
+        const objetos = ["mis deberes", "mi computadora", "mis llaves", "mi teléfono", "mi mochila"]; 
+
+        // Función para generar una excusa aleatoria 
+        function generaExcusaAleatoria() { 
+            const sujetoAleatorio = Math.floor(Math.random() * sujetos.length); 
+            const accionAleatoria = Math.floor(Math.random() * acciones.length); 
+            const objetoAleatorio = Math.floor(Math.random() * objetos.length); 
+            const excusa = `${sujetos[sujetoAleatorio]} ${acciones[accionAleatoria]} ${objetos[objetoAleatorio]}`; 
+            return excusa; 
+        } 
+
+        document.getElementById('generarExcusaAleatoria').addEventListener('click', function () { 
+            const excusa = generaExcusaAleatoria(); 
+            document.getElementById('excusaGenerada').textContent = excusa; 
+        }); 
+
+    </script> 
+
+</body> 
+
+</html>
